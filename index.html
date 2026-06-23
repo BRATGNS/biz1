@@ -1,0 +1,194 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Bizim Hikayemiz ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#001f54,#003a99);
+color:white;
+overflow-x:hidden;
+}
+
+#login{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+#login h1{
+margin-bottom:20px;
+font-size:40px;
+}
+
+input{
+padding:12px;
+width:260px;
+border:none;
+border-radius:10px;
+text-align:center;
+font-size:16px;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+#content{
+display:none;
+padding:30px;
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,255,255,.2);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.note{
+max-width:900px;
+margin:40px auto;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+line-height:1.8;
+font-size:18px;
+}
+
+.heart{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall linear forwards;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+</head>
+<body>
+
+<div id="login">
+<h1>🔒 Özel Sayfa</h1>
+<input type="password" id="password" placeholder="Şifre">
+<button onclick="giris()">Giriş Yap</button>
+</div>
+
+<div id="content">
+
+<audio autoplay loop controls>
+<source src="muzik.mp3" type="audio/mpeg">
+</audio>
+
+<h1 style="margin-top:20px;">❤️ Bizim Hikayemiz ❤️</h1>
+
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+
+<div class="note">
+<h2>🤍 Sana Bir Not 🤍</h2>
+<br>
+
+Hayatımda olduğun için her gün şükrediyorum.
+Sen sadece sevdiğim biri değil, aynı zamanda değer verdiğim,
+önemsediğim ve her zaman yanında olmak istediğim insansın.
+
+<br><br>
+
+Gülüşünle mutlu oluyor, üzüldüğünde seninle üzülüyorum.
+Senin mutluluğun benim için her zaman önemli olacak.
+
+<br><br>
+
+Belki her zaman kusursuz olamam ama seni ne kadar sevdiğimi,
+sana ne kadar değer verdiğimi ve seni ne kadar önemsediğimi
+her fırsatta göstermeye çalışacağım.
+
+<br><br>
+
+İyi ki hayatımdasın, iyi ki yollarımız kesişmiş.
+
+<br><br>
+
+Her zaman yanında olacağım.
+
+<br><br>
+
+<b>Seni çok seviyorum 🤍</b>
+</div>
+
+</div>
+
+<script>
+
+function giris(){
+let sifre=document.getElementById("password").value;
+
+if(sifre==="20.05.2026"){
+document.getElementById("login").style.display="none";
+document.getElementById("content").style.display="block";
+}
+else{
+alert("Şifre yanlış!");
+}
+}
+
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="🤍";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},400);
+
+</script>
+
+</body>
+</html>
+```
